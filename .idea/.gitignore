@@ -1,4 +1,8 @@
-
 # Default ignored files
 /workspace.xml
 .env
+__pycache__
+.pyc
+env/
+.vscode/
+.DS_STORE
