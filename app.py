@@ -3,7 +3,10 @@
 from flask import Flask, render_template, request, redirect, escape
 import requests
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
+TENOR_API_KEY = os.getenv("TENOR_API_KEY")
 """
 The following function will take the speech input from the user
 and store it in 'words' variable which we can later pass on
@@ -42,7 +45,7 @@ gifs into a list which we will later show in our HTML file
 def index():
     print("Querying Tenor API...")
     query = request.args.get('query')
-    key = "9KNYSIPBLNC1"
+    key = TENOR_API_KEY
     limit = 12
 
     params = {
